@@ -10,9 +10,8 @@ inputs:
     description: 'Kubectl Version'
     required: false
     default: '1.23.6'
-  kube-config:
-    description: 'base64 kubeconfig Data'
-    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.client-version }}
