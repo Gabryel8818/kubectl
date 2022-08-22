@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-KUBECTL_VERSION=$1
-
 # Install kubectl 
 curl -LO https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl \
 && install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
@@ -13,4 +11,7 @@ if [ ! -d "$HOME/.kube" ]; then
 fi
 
 # paste kubeconfig
-echo $BASE64_KUBE_CONFIG > $HOME/.kube/config 
+echo $BASE64_KUBE_CONFIG | base64 -d > $HOME/.kube/config 
+
+
+kubectl $*

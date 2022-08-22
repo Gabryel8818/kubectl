@@ -8,11 +8,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Hello world action step
+      - name: kubectl teste
         uses: ./ # Uses an action in the root directory
         id: kubectl
         env:
-          BASE64_KUBE_CONFIG: "TESTE"
-      # Use the output from the `hello` step
-      - name: testando
-        run: kubectl version 
+          BASE64_KUBE_CONFIG: "VEVTVEUK"
+          KUBECTL_VERSION: '1.23.6'

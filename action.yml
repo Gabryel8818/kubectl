@@ -6,12 +6,12 @@ branding:
   icon: terminal
   color: black
 inputs:
-  client-version:
-    description: 'Kubectl Version'
+  args:
+    description: 'Kubectl Arguments'
     required: false
-    default: '1.23.6'
+    default: 'version'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.client-version }}
+    - ${{ inputs.args }}
