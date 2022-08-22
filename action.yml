@@ -1,0 +1,20 @@
+# action.yml
+name: 'Kubernetes CLI'
+description: 'Github action to manage k8s'
+author: gabryel8818 <gabriel_melo88@hotmail.com>
+branding:
+  icon: terminal
+  color: black
+inputs:
+  client-version:  # id of input
+    description: 'Kubectl Version'
+    required: false
+    default: '1.23.6'
+  kube-config:
+    description: 'base64 kubeconfig Data'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.client-version }}
