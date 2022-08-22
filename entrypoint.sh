@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-KUBECTL_VERSION=$2
+KUBECTL_VERSION=$1
 
 # Install kubectl 
 curl -LO https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl \
