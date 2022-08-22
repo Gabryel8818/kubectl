@@ -1,0 +1,18 @@
+on: [push]
+
+jobs:
+  kubectl:
+    runs-on: ubuntu-latest
+    name: teste
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Hello world action step
+        uses: ./ # Uses an action in the root directory
+        id: kubectl
+        env:
+          BASE64_KUBE_CONFIG: "TESTE"
+      # Use the output from the `hello` step
+      - name: testando
+        run: kubectl version 
