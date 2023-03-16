@@ -38,7 +38,6 @@ jobs:
   apply:
     runs-on: ubuntu-20.04
     needs: [filesChanged]
-    environment: tools-prd
     strategy:
       fail-fast: false
       matrix:
