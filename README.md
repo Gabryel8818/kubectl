@@ -4,7 +4,7 @@ Action for kubectl
 ## How To use
 ### Basic
 ```
-- uses: Gabryel8818/kubectl@v1.0.1
+- uses: Gabryel8818/kubectl@v1.0.5
   env:
     BASE64_KUBE_CONFIG: ${{ secrets.KUBE_CONFIG_DATA }}
     KUBECTL_VERSION: '1.23.6'
